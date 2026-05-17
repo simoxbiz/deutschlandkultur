@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اكتشف ألمانيا — الثقافة الألمانية بالعربية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #fafaf7;
+    --gold: #D4A017;
+    --gold-light: #F5D978;
+    --red: #CC2929;
+    --de-gray: #2a2a2a;
+    --de-mid: #444;
+    --de-light: #888;
+    --surface: #111111;
+    --card-bg: #181818;
+    --border: rgba(255,255,255,0.08);
+    --accent: #D4A017;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding-top: 52px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,23,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(204,41,41,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .de-flag {
+    display: flex;
+    gap: 0;
+    width: 72px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .de-flag span { flex: 1; display: block; }
+  .de-flag .f1 { background: #1a1a1a; }
+  .de-flag .f2 { background: #CC2929; }
+  .de-flag .f3 { background: #D4A017; }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, #fff 30%, #D4A017 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-stat .lbl {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.1em;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 52px;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: auto;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+
+  @media (max-width: 768px) {
+    .nav {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding: 0.4rem 0.75rem;
+    }
+  }
+  .nav-btn {
+    background: transparent;
+    border: 0.5px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #000;
+    font-weight: 700;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    scroll-margin-top: 60px;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    border-bottom: 0.5px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+
+  .section-icon {
+    font-size: 3rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(212,160,23,0.3));
+  }
+
+  .section-meta {}
+  .section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .section-german {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    margin-top: 0.2rem;
+  }
+
+  /* CARDS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .card:hover {
+    border-color: rgba(212,160,23,0.4);
+    transform: translateY(-3px);
+  }
+  .card.open { border-color: rgba(212,160,23,0.6); }
+
+  .card-header {
+    padding: 1.25rem 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .card-emoji {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(212,160,23,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    flex-shrink: 0;
+  }
+
+  .card-titles { flex: 1; min-width: 0; }
+  .card-arabic {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    direction: rtl;
+    text-align: right;
+  }
+  .card-german {
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 2px;
+    direction: ltr;
+    text-align: left;
+  }
+  .card-pron {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    direction: ltr;
+    text-align: left;
+    margin-top: 1px;
+  }
+
+  .card-arrow {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    transition: transform 0.25s, color 0.2s;
+  }
+  .card.open .card-arrow {
+    transform: rotate(180deg);
+    color: var(--gold);
+  }
+
+  .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .card.open .card-body { max-height: 400px; }
+
+  .card-body-inner {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 0.5px solid var(--border);
+    margin-top: 0;
+    padding-top: 1rem;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .vocab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 0.75rem;
+  }
+  .vocab-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.04);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(255,255,255,0.06);
+    gap: 12px;
+  }
+  .vocab-de {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    direction: ltr;
+    font-family: monospace;
+    flex-shrink: 0;
+  }
+  .vocab-ar {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    direction: rtl;
+    text-align: right;
+  }
+
+  .tip-box {
+    background: rgba(212,160,23,0.07);
+    border: 0.5px solid rgba(212,160,23,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .tip-box::before {
+    content: '💡 ';
+  }
+
+  /* FEATURED (wide card) */
+  .card-wide {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(212,160,23,0.08) 0%, rgba(10,10,10,0) 60%);
+    border-color: rgba(212,160,23,0.2);
+  }
+  .card-wide .card-header { gap: 20px; }
+  .card-wide .card-emoji { width: 64px; height: 64px; font-size: 2.2rem; }
+  .card-wide .card-arabic { font-size: 1.25rem; }
+
+  /* PHRASE TABLE */
+  .phrase-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .phrase-table thead tr {
+    border-bottom: 0.5px solid rgba(212,160,23,0.3);
+  }
+  .phrase-table th {
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .phrase-table td {
+    padding: 10px 12px;
+    border-bottom: 0.5px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .phrase-table tr:last-child td { border-bottom: none; }
+  .phrase-de { direction: ltr; color: #fff; font-weight: 500; font-family: 'Courier New', monospace; }
+  .phrase-pron { direction: ltr; color: rgba(255,255,255,0.35); font-style: italic; font-size: 0.78rem; }
+  .phrase-ar { direction: rtl; text-align: right; color: rgba(255,255,255,0.7); }
+
+  /* SECTION DIVIDER */
+  .divider {
+    height: 0.5px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: rgba(255,255,255,0.25);
+    font-size: 0.8rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ANIMATE */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.6s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2.4rem; }
+    .hero-stats { gap: 2rem; }
+    .section-title { font-size: 1.5rem; }
+    .card-wide { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR with logo -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);border-bottom:0.5px solid rgba(255,255,255,0.08);">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="de-flag" style="width:36px;height:24px;border-radius:4px;margin:0;box-shadow:0 2px 10px rgba(0,0,0,0.5);">
+      <span class="f1"></span><span class="f2"></span><span class="f3"></span>
+    </div>
+    <span style="font-family:'Cairo',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.05em;">اكتشف ألمانيا</span>
+  </div>
+  <a href="mailto:services.onlinebiz@gmail.com" style="font-family:'Cairo',sans-serif;font-size:0.78rem;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:0.03em;opacity:0.85;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">services.onlinebiz@gmail.com</a>
+</div>
+
+<!-- NAME — يسار -->
+<div class="fade-up" style="padding:6rem 3rem 0;max-width:1100px;margin:0 auto;text-align:left;">
+  <div style="font-family:'Cairo',sans-serif;font-size:0.75rem;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:6px;">بقلم</div>
+  <div style="font-family:'Cairo',sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#fff 30%,#D4A017 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.1em;line-height:1.15;">MOHAMED<br>BOUJYH</div>
+  <div style="width:50px;height:2px;background:var(--gold);margin:12px 0 0;border-radius:99px;"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:2rem;">
+  <div class="hero-eyebrow fade-up delay-1">Niveau A2 · Grundstufe</div>
+  <h1 class="fade-up delay-2">Entdecke Deutschland</h1>
+  <p class="hero-sub fade-up delay-3">Der Kulturführer zur deutschen Welt</p>
+</section>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a class="nav-btn active" href="#food">🍽 الطعام</a>
+  <a class="nav-btn" href="#traditions">🎄 التقاليد</a>
+  <a class="nav-btn" href="#daily">🏙 الحياة اليومية</a>
+  <a class="nav-btn" href="#etiquette">🤝 الآداب</a>
+  <a class="nav-btn" href="#transport">🚌 المواصلات</a>
+  <a class="nav-btn" href="#school">🎓 التعليم</a>
+  <a class="nav-btn" href="#weather">🌦 الطقس</a>
+  <a class="nav-btn" href="#musik">🎵 الموسيقى</a>
+  <a class="nav-btn" href="#literatur">📚 الأدب</a>
+  <a class="nav-btn" href="#kunst">🎨 الفن</a>
+  <a class="nav-btn" href="#film">🎬 السينما</a>
+  <a class="nav-btn" href="#theater">🎭 المسرح</a>
+  <a class="nav-btn" href="#gesellschaft">🏛️ المجتمع</a>
+  <a class="nav-btn" href="#geschichte">📜 التاريخ</a>
+  <a class="nav-btn" href="#wissenschaft">🔬 العلوم</a>
+  <a class="nav-btn" href="#religion">⛪ الدين</a>
+  <a class="nav-btn" href="#medien">📰 الإعلام</a>
+  <a class="nav-btn" href="#hoerspiel">🎙️ المسرح الإذاعي</a>
+  <a class="nav-btn" href="#contact">✉️ تواصل معنا</a>
+</nav>
+
+
+<!-- ═══════════════ 1. FOOD ═══════════════ -->
+<section class="section" id="food">
+  <div class="section-header">
+    <div class="section-icon">🍽</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الأول</div>
+      <div class="section-title">الطعام والشراب</div>
+      <div class="section-german">Essen und Trinken</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🥖</div>
+        <div class="card-titles">
+          <div class="card-arabic">الخبز — قلب المطبخ الألماني</div>
+          <div class="card-german">Das Brot — Herzstück der Küche</div>
+          <div class="card-pron">[das broht — herts-shtük der küç-heh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">ألمانيا هي عاصمة الخبز في العالم! يوجد أكثر من 300 نوع مختلف من الخبز. الألمان يأكلون الخبز في الفطور والعشاء. كل منطقة فيها خبزها الخاص. الخبز الأسمر (Vollkornbrot) الأكثر صحة ومشهور جداً.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Brot</span><span class="vocab-ar">الخبز (الكبير)</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Brötchen</span><span class="vocab-ar">الخبيزة الصغيرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Bäcker</span><span class="vocab-ar">الخباز / المخبزة</span></div>
+          <div class="vocab-item"><span class="vocab-de">frisch</span><span class="vocab-ar">طازج</span></div>
+          <div class="vocab-item"><span class="vocab-de">lecker!</span><span class="vocab-ar">لذيذ!</span></div>
+        </div>
+        <div class="tip-box">في ألمانيا، الفطور والعشاء يكونون بارديين غالباً مع الخبز والجبن. الغداء هو الوجبة الحارة الأساسية.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🌭</div>
+        <div class="card-titles">
+          <div class="card-arabic">النقانق الألمانية</div>
+          <div class="card-german">Die Wurst</div>
+          <div class="card-pron">[dee voorst]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الوورست من أشهر الأكلات الألمانية. يوجد أكثر من 1500 نوع مختلف في ألمانيا. كل مدينة فيها وورستها الخاصة. Bratwurst هي النقانق المشوية الأشهر.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Bratwurst</span><span class="vocab-ar">النقانق المشوية</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Currywurst</span><span class="vocab-ar">نقانق بصلصة الكاري</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Senf</span><span class="vocab-ar">الخردل / المصطردة</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Würstchen</span><span class="vocab-ar">نقانق صغيرة</span></div>
+        </div>
+        <div class="tip-box">Currywurst هي الأكلة الشعبية في برلين — نقانق مع صلصة الطماطم والكاري. يوجد متحف كامل لها في برلين!</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🥨</div>
+        <div class="card-titles">
+          <div class="card-arabic">البريتزل</div>
+          <div class="card-german">Die Brezel</div>
+          <div class="card-pron">[dee breh-tsel]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">البريتزل من بافاريا (ميونيخ). شكله مميز جداً. يُؤكل مع البيرة في مهرجان أوكتوبرفست. يوجد طازج ومملح في كل مخبزة ألمانية.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">salzig</span><span class="vocab-ar">مالح</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Salz</span><span class="vocab-ar">الملح</span></div>
+          <div class="vocab-item"><span class="vocab-de">Bayern</span><span class="vocab-ar">بافاريا (ولاية)</span></div>
+        </div>
+        <div class="tip-box">البريتزل الحقيقي من بافاريا فيه ملح كبير على السطح ولونه بني لأنه مغمور في ماء خاص قبل الخبز.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">☕</div>
+        <div class="card-titles">
+          <div class="card-arabic">القهوة والكعكة</div>
+          <div class="card-german">Kaffee und Kuchen</div>
+          <div class="card-pron">[kah-feh oont koo-khen]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في الساعة الثالثة بعد الظهر، كثير من الألمان يشربون القهوة ويأكلون الكعكة. هذا تقليد مهم خاصة في البيت عند أهل العائلة يوم الأحد.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Kaffee</span><span class="vocab-ar">القهوة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Kuchen</span><span class="vocab-ar">الكعكة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Torte</span><span class="vocab-ar">التارت / الفطيرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">Schwarzwälder</span><span class="vocab-ar">كعكة الغابة السوداء</span></div>
+          <div class="vocab-item"><span class="vocab-de">süß</span><span class="vocab-ar">حلو</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🍺</div>
+        <div class="card-titles">
+          <div class="card-arabic">البيرة الألمانية</div>
+          <div class="card-german">Das Bier</div>
+          <div class="card-pron">[das beer]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">ألمانيا مشهورة بالبيرة منذ مئات السنين. يوجد قانون قديم من 1516 اسمه "Reinheitsgebot" يقول إن البيرة تُصنع فقط من الماء والشعير والقفزة والخميرة.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Bier</span><span class="vocab-ar">البيرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Brauerei</span><span class="vocab-ar">مصنع البيرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Prost!</span><span class="vocab-ar">في صحتك! (نخب)</span></div>
+          <div class="vocab-item"><span class="vocab-de">München</span><span class="vocab-ar">ميونيخ</span></div>
+        </div>
+        <div class="tip-box">ميونيخ عندها أكثر من 40 مصنع بيرة. Hofbräuhaus هو أشهر حانة بيرة في العالم.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🥔</div>
+        <div class="card-titles">
+          <div class="card-arabic">البطاطس الألمانية</div>
+          <div class="card-german">Die Kartoffel</div>
+          <div class="card-pron">[dee kar-tof-el]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">البطاطس مهمة جداً في المطبخ الألماني. يوجد أكثر من 200 وصفة بطاطس في ألمانيا! Kartoffelsalat (سلطة بطاطس) هي الأشهر.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Kartoffel</span><span class="vocab-ar">البطاطس</span></div>
+          <div class="vocab-item"><span class="vocab-de">Kartoffelsalat</span><span class="vocab-ar">سلطة البطاطس</span></div>
+          <div class="vocab-item"><span class="vocab-de">Bratkartoffeln</span><span class="vocab-ar">بطاطس مقلية/مشوية</span></div>
+          <div class="vocab-item"><span class="vocab-de">Knödel</span><span class="vocab-ar">كرات بطاطس مسلوقة</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 2. TRADITIONS ═══════════════ -->
+<section class="section" id="traditions">
+  <div class="section-header">
+    <div class="section-icon">🎄</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الثاني</div>
+      <div class="section-title">الأعياد والتقاليد</div>
+      <div class="section-german">Feste und Traditionen</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🎪</div>
+        <div class="card-titles">
+          <div class="card-arabic">مهرجان أوكتوبرفست — أكبر مهرجان في العالم</div>
+          <div class="card-german">Das Oktoberfest</div>
+          <div class="card-pron">[das ok-to-ber-fest]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">أوكتوبرفست هو مهرجان سنوي كبير في ميونيخ يبدأ في أواخر سبتمبر. يأتي إليه أكثر من 6 مليون شخص من كل العالم كل سنة. يوجد خيام ضخمة (Zelte) مع موسيقى وطعام وبيرة وملابس تقليدية.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Fest</span><span class="vocab-ar">المهرجان / الحفل</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Zelt</span><span class="vocab-ar">الخيمة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Tracht</span><span class="vocab-ar">الزي التقليدي</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Dirndl</span><span class="vocab-ar">فستان المرأة التقليدي</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Lederhosen</span><span class="vocab-ar">السروال الجلدي للرجل</span></div>
+          <div class="vocab-item"><span class="vocab-de">viel Spaß!</span><span class="vocab-ar">استمتع كثيراً!</span></div>
+        </div>
+        <div class="tip-box">المهرجان يبدأ في السبت الأخير من سبتمبر وينتهي في أول أحد من أكتوبر — مدته حوالي 16 يوم.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎄</div>
+        <div class="card-titles">
+          <div class="card-arabic">عيد الميلاد</div>
+          <div class="card-german">Weihnachten</div>
+          <div class="card-pron">[vy-nakht-en]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">عيد الميلاد مهم جداً في ألمانيا. سوق عيد الميلاد (Weihnachtsmarkt) مشهور في كل مدينة. يُزيّن الناس الشجرة ويتبادلون الهدايا يوم 24 ديسمبر مساءً.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">Frohe Weihnachten!</span><span class="vocab-ar">عيد ميلاد سعيد!</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Weihnachtsmarkt</span><span class="vocab-ar">سوق عيد الميلاد</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Geschenk</span><span class="vocab-ar">الهدية</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Baum</span><span class="vocab-ar">الشجرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Advent</span><span class="vocab-ar">الأربعة أسابيع قبل عيد الميلاد</span></div>
+        </div>
+        <div class="tip-box">ألمانيا اخترعت تقليد شجرة عيد الميلاد المزيّنة! هذا التقليد انتشر من ألمانيا إلى كل العالم.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎆</div>
+        <div class="card-titles">
+          <div class="card-arabic">ليلة رأس السنة</div>
+          <div class="card-german">Silvester</div>
+          <div class="card-pron">[zil-ves-ter]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">ليلة 31 ديسمبر مهمة جداً. الألمان يحتفلون مع الأصدقاء والعائلة. الألعاب النارية كثيرة جداً في الشوارع. يوجد تقليد مضحك اسمه Bleigießen — صب الرصاص في الماء لمعرفة المستقبل!</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">Guten Rutsch!</span><span class="vocab-ar">سنة جديدة سعيدة! (حرفياً: انزلق جيداً)</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Feuerwerk</span><span class="vocab-ar">الألعاب النارية</span></div>
+          <div class="vocab-item"><span class="vocab-de">das neue Jahr</span><span class="vocab-ar">السنة الجديدة</span></div>
+          <div class="vocab-item"><span class="vocab-de">Prost Neujahr!</span><span class="vocab-ar">في صحة السنة الجديدة!</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🥚</div>
+        <div class="card-titles">
+          <div class="card-arabic">عيد الفصح</div>
+          <div class="card-german">Ostern</div>
+          <div class="card-pron">[os-tern]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في عيد الفصح، أرنب عيد الفصح (Osterhase) يُخبئ البيض الملون والشوكولاطة في الحديقة. الأطفال يبحثون عنها في الصباح. هذا من أجمل تقاليد الأطفال في ألمانيا.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Osterhase</span><span class="vocab-ar">أرنب عيد الفصح</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Osterei</span><span class="vocab-ar">بيضة عيد الفصح</span></div>
+          <div class="vocab-item"><span class="vocab-de">suchen</span><span class="vocab-ar">يبحث</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Frühling</span><span class="vocab-ar">الربيع</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎭</div>
+        <div class="card-titles">
+          <div class="card-arabic">كرنفال الأقنعة</div>
+          <div class="card-german">Karneval / Fasching</div>
+          <div class="card-pron">[kar-neh-val / fa-shing]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في شهر فبراير أو مارس، يوجد كرنفال كبير في كولونيا وماينز. الناس يلبسون ملابس مضحكة ويرقصون في الشوارع. هذا وقت مرح جداً ويسمى "الموسم الخامس".</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Kostüm</span><span class="vocab-ar">الزي / القناع</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Maske</span><span class="vocab-ar">القناع</span></div>
+          <div class="vocab-item"><span class="vocab-de">lustig</span><span class="vocab-ar">مضحك / مرح</span></div>
+          <div class="vocab-item"><span class="vocab-de">Köln</span><span class="vocab-ar">كولونيا</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 3. DAILY LIFE ═══════════════ -->
+<section class="section" id="daily">
+  <div class="section-header">
+    <div class="section-icon">🏙</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الثالث</div>
+      <div class="section-title">الحياة اليومية</div>
+      <div class="section-german">Das Alltagsleben</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">♻️</div>
+        <div class="card-titles">
+          <div class="card-arabic">فرز القمامة</div>
+          <div class="card-german">Mülltrennung</div>
+          <div class="card-pron">[myül-tren-nung]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">فرز القمامة واجب في ألمانيا. يوجد صناديق مختلفة لكل نوع من النفايات. إذا لم تفرز بشكل صحيح، يمكن أن تدفع غرامة!</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der gelbe Sack</span><span class="vocab-ar">الكيس الأصفر (البلاستيك)</span></div>
+          <div class="vocab-item"><span class="vocab-de">die blaue Tonne</span><span class="vocab-ar">الحاوية الزرقاء (الورق)</span></div>
+          <div class="vocab-item"><span class="vocab-de">die braune Tonne</span><span class="vocab-ar">الحاوية البنية (البيولوجي)</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Glas</span><span class="vocab-ar">الزجاج</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Restmüll</span><span class="vocab-ar">النفايات المتبقية</span></div>
+        </div>
+        <div class="tip-box">ألمانيا من أكثر دول العالم في إعادة التدوير — تعيد تدوير أكثر من 65% من نفاياتها!</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🚲</div>
+        <div class="card-titles">
+          <div class="card-arabic">ركوب الدراجة</div>
+          <div class="card-german">Fahrrad fahren</div>
+          <div class="card-pron">[far-rat fah-ren]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الدراجة وسيلة مواصلات أساسية في ألمانيا. في المدن يوجد مسارات خاصة للدراجات. لا تسير في مسار الدراجات إذا كنت تمشي على قدميك!</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Fahrrad</span><span class="vocab-ar">الدراجة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Fahrradweg</span><span class="vocab-ar">مسار الدراجات</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Helm</span><span class="vocab-ar">الخوذة</span></div>
+          <div class="vocab-item"><span class="vocab-de">fahren</span><span class="vocab-ar">يقود / يسير</span></div>
+        </div>
+        <div class="tip-box">في ألمانيا يوجد أكثر من 80 مليون دراجة — أكثر من السكان!</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🛒</div>
+        <div class="card-titles">
+          <div class="card-arabic">يوم الأحد — المحلات مغلقة</div>
+          <div class="card-german">Sonntag ist Ruhetag</div>
+          <div class="card-pron">[zon-tak ist roo-eh-tak]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">يوم الأحد هو يوم الراحة في ألمانيا. المحلات التجارية مغلقة تقريباً. الضوضاء ممنوعة، والموسيقى الصاخبة غير مقبولة. الناس يمشون في الطبيعة أو يزورون العائلة.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Sonntag</span><span class="vocab-ar">يوم الأحد</span></div>
+          <div class="vocab-item"><span class="vocab-de">zu / geschlossen</span><span class="vocab-ar">مغلق</span></div>
+          <div class="vocab-item"><span class="vocab-de">offen</span><span class="vocab-ar">مفتوح</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Ruhe</span><span class="vocab-ar">الهدوء / الراحة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🌲</div>
+        <div class="card-titles">
+          <div class="card-arabic">المشي في الغابة</div>
+          <div class="card-german">Wandern im Wald</div>
+          <div class="card-pron">[van-dern im valt]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الألمان يحبون الطبيعة كثيراً. المشي في الغابة (Wandern) هواية شعبية جداً. يوجد طرق خاصة للمشي في كل أنحاء ألمانيا.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Wald</span><span class="vocab-ar">الغابة</span></div>
+          <div class="vocab-item"><span class="vocab-de">wandern</span><span class="vocab-ar">يمشي في الطبيعة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Natur</span><span class="vocab-ar">الطبيعة</span></div>
+          <div class="vocab-item"><span class="vocab-de">schön</span><span class="vocab-ar">جميل</span></div>
+        </div>
+        <div class="tip-box">ألمانيا مغطاة بأكثر من 30% غابات. الغابة السوداء (Schwarzwald) في جنوب ألمانيا من أجمل المناطق.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">⚽</div>
+        <div class="card-titles">
+          <div class="card-arabic">كرة القدم</div>
+          <div class="card-german">Fußball</div>
+          <div class="card-pron">[foos-bal]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">كرة القدم هي الرياضة الأولى في ألمانيا. البوندسليغا (Bundesliga) هي الدوري الألماني المحترف. نادي بايرن ميونيخ من أشهر الأندية في العالم.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Fußball</span><span class="vocab-ar">كرة القدم</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Tor</span><span class="vocab-ar">الهدف</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Mannschaft</span><span class="vocab-ar">الفريق</span></div>
+          <div class="vocab-item"><span class="vocab-de">spielen</span><span class="vocab-ar">يلعب</span></div>
+          <div class="vocab-item"><span class="vocab-de">gewinnen</span><span class="vocab-ar">يفوز</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 4. ETIQUETTE ═══════════════ -->
+<section class="section" id="etiquette">
+  <div class="section-header">
+    <div class="section-icon">🤝</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الرابع</div>
+      <div class="section-title">الآداب والسلوك</div>
+      <div class="section-german">Manieren und Verhalten</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">⏰</div>
+        <div class="card-titles">
+          <div class="card-arabic">الالتزام بالوقت — قاعدة ذهبية</div>
+          <div class="card-german">Pünktlichkeit ist alles!</div>
+          <div class="card-pron">[pünkt-likh-kite ist al-es]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في ألمانيا، الوقت مقدس! التأخير ولو دقيقتين يُعتبر غير محترم. إذا كنت ستتأخر، اتصل مسبقاً واعتذر. في العمل والمواعيد الرسمية، كن دقيقاً جداً. الحضور المبكر بـ5 دقائق هو الوقت المثالي.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">pünktlich</span><span class="vocab-ar">في الموعد / دقيق</span></div>
+          <div class="vocab-item"><span class="vocab-de">zu spät</span><span class="vocab-ar">متأخر</span></div>
+          <div class="vocab-item"><span class="vocab-de">Entschuldigung!</span><span class="vocab-ar">عذراً! / آسف!</span></div>
+          <div class="vocab-item"><span class="vocab-de">Ich bin um ... Uhr da.</span><span class="vocab-ar">سأكون هناك في الساعة ...</span></div>
+        </div>
+        <div class="tip-box">الألمان يقولون: "Pünktlichkeit ist die Höflichkeit der Könige" — الدقة هي لياقة الملوك.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🤝</div>
+        <div class="card-titles">
+          <div class="card-arabic">المصافحة والتحية</div>
+          <div class="card-german">Begrüßung</div>
+          <div class="card-pron">[beh-grü-sung]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">المصافحة بقوة (ليست خفيفة) هي التحية الرسمية في ألمانيا. انظر في عيون الشخص عند المصافحة. بين الأصدقاء يوجد قبلة على الخد.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">Guten Morgen!</span><span class="vocab-ar">صباح الخير!</span></div>
+          <div class="vocab-item"><span class="vocab-de">Guten Tag!</span><span class="vocab-ar">مرحباً! (نهاراً)</span></div>
+          <div class="vocab-item"><span class="vocab-de">Guten Abend!</span><span class="vocab-ar">مساء الخير!</span></div>
+          <div class="vocab-item"><span class="vocab-de">Auf Wiedersehen!</span><span class="vocab-ar">مع السلامة!</span></div>
+          <div class="vocab-item"><span class="vocab-de">Tschüss!</span><span class="vocab-ar">باي! (بين أصدقاء)</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🍽</div>
+        <div class="card-titles">
+          <div class="card-arabic">آداب الطعام</div>
+          <div class="card-german">Tischmanieren</div>
+          <div class="card-pron">[tish-mah-nee-ren]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">على المائدة، لا تبدأ الأكل قبل الجميع. قل "Guten Appetit" قبل الأكل. ضع اليدين على المائدة (ليس في الحضن). وضع السكين والشوكة معاً يعني أنك انتهيت.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">Guten Appetit!</span><span class="vocab-ar">بالهناء والشفاء!</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Messer</span><span class="vocab-ar">السكين</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Gabel</span><span class="vocab-ar">الشوكة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Löffel</span><span class="vocab-ar">الملعقة</span></div>
+          <div class="vocab-item"><span class="vocab-de">Es hat gut geschmeckt!</span><span class="vocab-ar">كان لذيذاً!</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🤫</div>
+        <div class="card-titles">
+          <div class="card-arabic">الهدوء في الأماكن العامة</div>
+          <div class="card-german">Ruhe bitte!</div>
+          <div class="card-pron">[roo-heh bit-teh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في المترو والمكتبة والمستشفى والمطعم، تكلم بصوت هادئ. الكلام بصوت عالٍ في الأماكن العامة غير مقبول في الثقافة الألمانية.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">ruhig</span><span class="vocab-ar">هادئ</span></div>
+          <div class="vocab-item"><span class="vocab-de">laut</span><span class="vocab-ar">بصوت عالٍ</span></div>
+          <div class="vocab-item"><span class="vocab-de">leise</span><span class="vocab-ar">بصوت منخفض</span></div>
+          <div class="vocab-item"><span class="vocab-de">Bitte ruhig!</span><span class="vocab-ar">هدوء من فضلك!</span></div>
+        </div>
+        <div class="tip-box">ساعات الهدوء (Ruhezeiten): من 22:00 إلى 7:00 صباحاً، ويوم الأحد طوال اليوم — ممنوع الضوضاء!</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 5. TRANSPORT ═══════════════ -->
+<section class="section" id="transport">
+  <div class="section-header">
+    <div class="section-icon">🚌</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الخامس</div>
+      <div class="section-title">المواصلات</div>
+      <div class="section-german">Verkehrsmittel</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🚆</div>
+        <div class="card-titles">
+          <div class="card-arabic">القطار الألماني</div>
+          <div class="card-german">Die Deutsche Bahn (DB)</div>
+          <div class="card-pron">[dee doytsh-eh bahn]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">القطار في ألمانيا مشهور جداً. شركة Deutsche Bahn (DB) تشغّل القطارات. القطار السريع ICE يصل إلى 300 كلم/ساعة. القطارات أحياناً تتأخر — هذه نكتة مشهورة عن ألمانيا!</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Zug</span><span class="vocab-ar">القطار</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Bahnhof</span><span class="vocab-ar">محطة القطار</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Gleis</span><span class="vocab-ar">الرصيف / الخط</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Verspätung</span><span class="vocab-ar">التأخير</span></div>
+          <div class="vocab-item"><span class="vocab-de">pünktlich</span><span class="vocab-ar">في الموعد</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Fahrkarte</span><span class="vocab-ar">التذكرة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🚇</div>
+        <div class="card-titles">
+          <div class="card-arabic">المترو والترام</div>
+          <div class="card-german">U-Bahn und Straßenbahn</div>
+          <div class="card-pron">[oo-bahn oont shtras-sen-bahn]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في المدن الكبيرة يوجد مترو (U-Bahn) وترام (Straßenbahn) وحافلات. التذكرة واحدة تصلح لكل وسائل النقل. يجب شراء التذكرة قبل الركوب!</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die U-Bahn</span><span class="vocab-ar">المترو</span></div>
+          <div class="vocab-item"><span class="vocab-de">die S-Bahn</span><span class="vocab-ar">قطار المدينة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Bus</span><span class="vocab-ar">الحافلة</span></div>
+          <div class="vocab-item"><span class="vocab-de">einsteigen</span><span class="vocab-ar">يركب</span></div>
+          <div class="vocab-item"><span class="vocab-de">aussteigen</span><span class="vocab-ar">ينزل</span></div>
+        </div>
+        <div class="tip-box">في ألمانيا لا يوجد حارس على التذكرة دائماً، لكن يوجد مفتشون يأتون فجأة. التذكرة إلزامية وإلا غرامة 60 يورو!</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🚗</div>
+        <div class="card-titles">
+          <div class="card-arabic">الأوتوبان</div>
+          <div class="card-german">Die Autobahn</div>
+          <div class="card-pron">[dee ow-to-bahn]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الأوتوبان الألماني مشهور في العالم. يوجد أجزاء بدون حد سرعة (Tempo 130 موصى به). السيارات الألمانية مشهورة: BMW، Mercedes، Audi، Volkswagen.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Autobahn</span><span class="vocab-ar">الطريق السريع</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Auto</span><span class="vocab-ar">السيارة</span></div>
+          <div class="vocab-item"><span class="vocab-de">schnell</span><span class="vocab-ar">سريع</span></div>
+          <div class="vocab-item"><span class="vocab-de">langsam</span><span class="vocab-ar">بطيء</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 6. SCHOOL ═══════════════ -->
+<section class="section" id="school">
+  <div class="section-header">
+    <div class="section-icon">🎓</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع السادس</div>
+      <div class="section-title">التعليم والعمل</div>
+      <div class="section-german">Schule und Arbeit</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">📚</div>
+        <div class="card-titles">
+          <div class="card-arabic">المدرسة في ألمانيا</div>
+          <div class="card-german">Die Schule</div>
+          <div class="card-pron">[dee shoo-leh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الدراسة إلزامية من سن 6 إلى 18 سنة. يوجد 3 أنواع من المدارس الثانوية حسب مستوى الطالب: Hauptschule، Realschule، Gymnasium. الـGymansium يؤدي إلى الجامعة.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Schule</span><span class="vocab-ar">المدرسة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Universität</span><span class="vocab-ar">الجامعة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Lehrer / die Lehrerin</span><span class="vocab-ar">المعلم / المعلمة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Schüler</span><span class="vocab-ar">الطالب</span></div>
+          <div class="vocab-item"><span class="vocab-de">lernen</span><span class="vocab-ar">يتعلم / يدرس</span></div>
+        </div>
+        <div class="tip-box">الجامعات الألمانية مجانية للطلاب! وكثير منها تقبل الطلاب الأجانب.</div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🔧</div>
+        <div class="card-titles">
+          <div class="card-arabic">التدريب المهني</div>
+          <div class="card-german">Die Ausbildung</div>
+          <div class="card-pron">[dee owss-bil-dung]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">نظام التدريب المهني (Ausbildung) في ألمانيا من أفضل الأنظمة في العالم. يتدرب الشاب في شركة ويدرس في نفس الوقت. كثير من الشباب يختارون هذا الطريق بدل الجامعة.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Ausbildung</span><span class="vocab-ar">التدريب المهني</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Beruf</span><span class="vocab-ar">المهنة / الوظيفة</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Arbeit</span><span class="vocab-ar">العمل</span></div>
+          <div class="vocab-item"><span class="vocab-de">arbeiten</span><span class="vocab-ar">يعمل</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">💼</div>
+        <div class="card-titles">
+          <div class="card-arabic">في مكان العمل</div>
+          <div class="card-german">Am Arbeitsplatz</div>
+          <div class="card-pron">[am ar-bits-plats]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">في العمل، الألمان يفصلون بين الحياة الشخصية والمهنية. الكفاءة والنظام مهمان جداً. اجتماعات العمل لها أجندة واضحة ومحددة بوقت.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Büro</span><span class="vocab-ar">المكتب</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Chef / die Chefin</span><span class="vocab-ar">المدير / المديرة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Kollege</span><span class="vocab-ar">الزميل</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Meeting</span><span class="vocab-ar">الاجتماع</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 7. WEATHER ═══════════════ -->
+<section class="section" id="weather">
+  <div class="section-header">
+    <div class="section-icon">🌦</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع السابع</div>
+      <div class="section-title">الطقس والفصول</div>
+      <div class="section-german">Wetter und Jahreszeiten</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">❄️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الشتاء في ألمانيا</div>
+          <div class="card-german">Der Winter</div>
+          <div class="card-pron">[dehr vin-ter]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الشتاء بارد جداً في ألمانيا. الثلج يوجد خاصة في الجنوب. درجات الحرارة تنزل إلى ما تحت الصفر. الملابس الثقيلة ضرورية من أكتوبر حتى مارس.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">kalt</span><span class="vocab-ar">بارد</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Schnee</span><span class="vocab-ar">الثلج</span></div>
+          <div class="vocab-item"><span class="vocab-de">es schneit</span><span class="vocab-ar">يثلج</span></div>
+          <div class="vocab-item"><span class="vocab-de">minus Grad</span><span class="vocab-ar">تحت الصفر</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Mantel</span><span class="vocab-ar">المعطف</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">☀️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الصيف في ألمانيا</div>
+          <div class="card-german">Der Sommer</div>
+          <div class="card-pron">[dehr zo-mer]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">الصيف جميل ودافئ. الناس يخرجون إلى الحدائق والبحيرات. ثقافة الشواء (Grillen) مهمة جداً. الألمان يحبون الجلوس في الهواء الطلق أمام المقاهي.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">warm / heiß</span><span class="vocab-ar">دافئ / حار</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Sonne</span><span class="vocab-ar">الشمس</span></div>
+          <div class="vocab-item"><span class="vocab-de">es ist sonnig</span><span class="vocab-ar">الجو مشمس</span></div>
+          <div class="vocab-item"><span class="vocab-de">grillen</span><span class="vocab-ar">يشوي / يعمل شواء</span></div>
+          <div class="vocab-item"><span class="vocab-de">der See</span><span class="vocab-ar">البحيرة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🍂</div>
+        <div class="card-titles">
+          <div class="card-arabic">الفصول الأربعة</div>
+          <div class="card-german">Die vier Jahreszeiten</div>
+          <div class="card-pron">[dee feer yah-res-tsy-ten]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-desc">ألمانيا عندها فصول أربعة واضحة. الربيع جميل مع الأزهار. الصيف دافئ. الخريف ملون بالأوراق. الشتاء بارد مع الثلج أحياناً.</div>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Frühling</span><span class="vocab-ar">الربيع</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Sommer</span><span class="vocab-ar">الصيف</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Herbst</span><span class="vocab-ar">الخريف</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Winter</span><span class="vocab-ar">الشتاء</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Wetter</span><span class="vocab-ar">الطقس</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ MUSIK ═══════════════ -->
+<section class="section" id="musik" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🎵</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع التاسع</div>
+      <div class="section-title">الموسيقى الألمانية</div>
+      <div class="section-german">Die Musik</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🎼</div>
+        <div class="card-titles">
+          <div class="card-arabic">باخ وبيتهوفن — عمالقة الموسيقى الكلاسيكية</div>
+          <div class="card-german">Bach und Beethoven — Giganten der klassischen Musik</div>
+          <div class="card-pron">[bakh oont beh-toh-fen]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>يوهان سيباستيان باخ ولودفيغ فان بيتهوفن من أعظم الموسيقيين في التاريخ، وكلاهما ألماني. أثّرا في الموسيقى الغربية تأثيراً لا يُضاهى.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Komponist</span><span class="vocab-ar">الملحّن</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Sinfonie</span><span class="vocab-ar">السيمفونية</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Konzert</span><span class="vocab-ar">الحفل الموسيقي</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎹</div>
+        <div class="card-titles">
+          <div class="card-arabic">الأوبرا الألمانية</div>
+          <div class="card-german">Die Oper</div>
+          <div class="card-pron">[dee oh-per]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>ريتشارد فاغنر من أشهر مؤلفي الأوبرا الألمانية. أوبرا بايرويت مشهورة عالمياً وتُقام فيها مهرجانات سنوية.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Bühne</span><span class="vocab-ar">المسرح</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Sänger</span><span class="vocab-ar">المغني</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Aufführung</span><span class="vocab-ar">العرض</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎸</div>
+        <div class="card-titles">
+          <div class="card-arabic">الموسيقى الحديثة</div>
+          <div class="card-german">Moderne Musik</div>
+          <div class="card-pron">[mo-der-neh moo-zeek]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>ألمانيا مركز عالمي لموسيقى التكنو والإلكترونيك. برلين خاصةً مشهورة بنوادي الموسيقى الإلكترونية مثل Berghain.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Band</span><span class="vocab-ar">الفرقة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Rhythmus</span><span class="vocab-ar">الإيقاع</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Festival</span><span class="vocab-ar">المهرجان</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ LITERATUR ═══════════════ -->
+<section class="section" id="literatur" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">📚</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع العاشر</div>
+      <div class="section-title">الأدب الألماني</div>
+      <div class="section-german">Die Literatur</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">📖</div>
+        <div class="card-titles">
+          <div class="card-arabic">غوته وشيلر — رمزا الأدب الألماني</div>
+          <div class="card-german">Goethe und Schiller — Ikonen der deutschen Literatur</div>
+          <div class="card-pron">[gö-teh oont shi-ler]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>يوهان فولفغانغ فون غوته صاحب "فاوست"، وفريدريش شيلر صاحب "وليم تل". كلاهما من أعظم أدباء اللغة الألمانية على مر العصور.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Dichter</span><span class="vocab-ar">الشاعر/الأديب</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Gedicht</span><span class="vocab-ar">القصيدة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Roman</span><span class="vocab-ar">الرواية</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🖊️</div>
+        <div class="card-titles">
+          <div class="card-arabic">معرض فرانكفورت للكتاب</div>
+          <div class="card-german">Die Frankfurter Buchmesse</div>
+          <div class="card-pron">[frank-foor-ter bookh-mes-eh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>أكبر معرض للكتاب في العالم يُقام سنوياً في فرانكفورت. يجمع الناشرين والكتّاب من أكثر من 100 دولة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Verlag</span><span class="vocab-ar">دار النشر</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Buch</span><span class="vocab-ar">الكتاب</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Autor</span><span class="vocab-ar">المؤلف</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🏆</div>
+        <div class="card-titles">
+          <div class="card-arabic">جائزة نوبل للآداب</div>
+          <div class="card-german">Der Nobelpreis für Literatur</div>
+          <div class="card-pron">[der noh-bel-prais für li-te-ra-toor]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>فاز عدد كبير من الكتّاب الألمان بجائزة نوبل للآداب، منهم هاينريش بول وغونتر غراس وهيرتا مولر.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Auszeichnung</span><span class="vocab-ar">الجائزة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Schriftsteller</span><span class="vocab-ar">الكاتب</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Werk</span><span class="vocab-ar">العمل الأدبي</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ KUNST ═══════════════ -->
+<section class="section" id="kunst" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🎨</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الحادي عشر</div>
+      <div class="section-title">الفن الألماني</div>
+      <div class="section-german">Die Kunst</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🏛️</div>
+        <div class="card-titles">
+          <div class="card-arabic">مدرسة الباوهاوس — ثورة في التصميم</div>
+          <div class="card-german">Das Bauhaus — Revolution im Design</div>
+          <div class="card-pron">[das bow-hows]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>تأسست مدرسة الباوهاوس عام 1919 في فايمار وأحدثت ثورة في الفن والتصميم والعمارة. لا تزال تؤثر في عالم التصميم الحديث حتى اليوم.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Architektur</span><span class="vocab-ar">العمارة</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Design</span><span class="vocab-ar">التصميم</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Künstler</span><span class="vocab-ar">الفنان</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🖼️</div>
+        <div class="card-titles">
+          <div class="card-arabic">المتاحف الألمانية</div>
+          <div class="card-german">Die Museen</div>
+          <div class="card-pron">[dee moo-zeh-en]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>تضم ألمانيا أكثر من 6500 متحف. جزيرة المتاحف في برلين مصنّفة تراثاً عالمياً لليونسكو وتضم 5 متاحف تاريخية عريقة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Museum</span><span class="vocab-ar">المتحف</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Ausstellung</span><span class="vocab-ar">المعرض</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Gemälde</span><span class="vocab-ar">اللوحة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">✏️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الفن المعاصر</div>
+          <div class="card-german">Die zeitgenössische Kunst</div>
+          <div class="card-pron">[dee tsait-ge-nö-si-sheh kunst]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>documenta في كاسل من أهم معارض الفن المعاصر عالمياً، يُقام كل 5 سنوات ويستقطب ملايين الزوار من جميع أنحاء العالم.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Galerie</span><span class="vocab-ar">الغاليري</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Bildhauer</span><span class="vocab-ar">النحات</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Kunstwerk</span><span class="vocab-ar">العمل الفني</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ FILM ═══════════════ -->
+<section class="section" id="film" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🎬</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الثاني عشر</div>
+      <div class="section-title">السينما الألمانية</div>
+      <div class="section-german">Der Film</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🎞️</div>
+        <div class="card-titles">
+          <div class="card-arabic">مهرجان برلين السينمائي — البيرلينالة</div>
+          <div class="card-german">Die Berlinale — Internationale Filmfestspiele</div>
+          <div class="card-pron">[dee ber-li-na-leh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>البيرلينالة من أكبر وأهم مهرجانات السينما في العالم، يُقام سنوياً في برلين. جائزته الكبرى هي الدب الذهبي.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Regisseur</span><span class="vocab-ar">المخرج</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Leinwand</span><span class="vocab-ar">الشاشة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Schauspieler</span><span class="vocab-ar">الممثل</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🐻</div>
+        <div class="card-titles">
+          <div class="card-arabic">الدب الذهبي</div>
+          <div class="card-german">Der Goldene Bär</div>
+          <div class="card-pron">[der gol-deh-neh ber]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>الجائزة الكبرى لمهرجان برلين السينمائي. فازت بها أفلام من مختلف أنحاء العالم وهي من أرفع الجوائز السينمائية الدولية.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Preis</span><span class="vocab-ar">الجائزة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Film</span><span class="vocab-ar">الفيلم</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Jury</span><span class="vocab-ar">لجنة التحكيم</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎥</div>
+        <div class="card-titles">
+          <div class="card-arabic">أشهر الأفلام الألمانية</div>
+          <div class="card-german">Berühmte deutsche Filme</div>
+          <div class="card-pron">[be-rüm-teh doyt-sheh fil-meh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>من أشهر الأفلام الألمانية: "حياة الآخرين" (Das Leben der Anderen) الحائز على أوسكار، و"Good Bye Lenin" و"Run Lola Run".</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Oscars</span><span class="vocab-ar">الأوسكار</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Untertitel</span><span class="vocab-ar">الترجمة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Kinofilm</span><span class="vocab-ar">فيلم سينمائي</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ THEATER ═══════════════ -->
+<section class="section" id="theater" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🎭</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الثالث عشر</div>
+      <div class="section-title">المسرح الألماني</div>
+      <div class="section-german">Das Theater</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🎪</div>
+        <div class="card-titles">
+          <div class="card-arabic">ألمانيا — عاصمة المسرح العالمي</div>
+          <div class="card-german">Deutschland — Theaterhauptstadt der Welt</div>
+          <div class="card-pron">[teh-ah-ter-howpt-shtat]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>تمتلك ألمانيا أكثر من 800 مسرح ثابت — أكثر من أي دولة أخرى في العالم. يزور المسارح سنوياً أكثر من 35 مليون شخص.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Theater</span><span class="vocab-ar">المسرح</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Vorstellung</span><span class="vocab-ar">العرض</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Bühne</span><span class="vocab-ar">خشبة المسرح</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎶</div>
+        <div class="card-titles">
+          <div class="card-arabic">الأوبرا والباليه</div>
+          <div class="card-german">Oper und Ballett</div>
+          <div class="card-pron">[oh-per oont ba-let]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>دور الأوبرا الألمانية من الأرقى في العالم، خاصةً أوبرا برلين وأوبرا ميونيخ. التذاكر متاحة بأسعار مدعومة للطلاب.</p>
+        <p><strong>mفردات:</strong> die Oper [dee oh-per] — الأوبرا | das Ballett [das ba-let] — الباليه | der Vorhang [der for-hang] — الستارة</p>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🃏</div>
+        <div class="card-titles">
+          <div class="card-arabic">برتولت بريخت — أيقونة المسرح</div>
+          <div class="card-german">Bertolt Brecht — Ikone des Theaters</div>
+          <div class="card-pron">[ber-tolt brekht]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>برتولت بريخت من أعظم كتّاب المسرح في القرن العشرين. طوّر نظرية "المسرح الملحمي" التي أثّرت في المسرح العالمي بأكمله.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Dramatiker</span><span class="vocab-ar">كاتب مسرحي</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Stück</span><span class="vocab-ar">المسرحية</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Inszenierung</span><span class="vocab-ar">الإخراج</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ GESELLSCHAFT ═══════════════ -->
+<section class="section" id="gesellschaft" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🏛️</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الرابع عشر</div>
+      <div class="section-title">المجتمع الألماني</div>
+      <div class="section-german">Die Gesellschaft</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🤝</div>
+        <div class="card-titles">
+          <div class="card-arabic">التنوع والاندماج في ألمانيا</div>
+          <div class="card-german">Vielfalt und Integration in Deutschland</div>
+          <div class="card-pron">[feel-falt oont in-te-gra-tsion]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>يعيش في ألمانيا أكثر من 20 مليون شخص من أصول مهاجرة. التنوع الثقافي جزء أساسي من المجتمع الألماني الحديث.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Integration</span><span class="vocab-ar">الاندماج</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Vielfalt</span><span class="vocab-ar">التنوع</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Migrant</span><span class="vocab-ar">المهاجر</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">⚖️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الديمقراطية والقانون</div>
+          <div class="card-german">Demokratie und Recht</div>
+          <div class="card-pron">[de-mo-kra-tsee oont rekht]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>ألمانيا دولة ديمقراطية فيدرالية تتكون من 16 ولاية. يكفل القانون الأساسي حقوق الإنسان والحريات الأساسية لجميع المقيمين.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Gesetz</span><span class="vocab-ar">القانون</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Demokratie</span><span class="vocab-ar">الديمقراطية</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Grundgesetz</span><span class="vocab-ar">القانون الأساسي</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🌿</div>
+        <div class="card-titles">
+          <div class="card-arabic">البيئة والاستدامة</div>
+          <div class="card-german">Umwelt und Nachhaltigkeit</div>
+          <div class="card-pron">[oom-velt oont nakh-hal-tikh-kait]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>الألمان من أكثر الشعوب اهتماماً بالبيئة. فرز النفايات إلزامي والطاقة المتجددة تشكل أكثر من 50% من الكهرباء المنتجة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Umweltschutz</span><span class="vocab-ar">حماية البيئة</span></div>
+          <div class="vocab-item"><span class="vocab-de">recyceln</span><span class="vocab-ar">إعادة التدوير</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Nachhaltigkeit</span><span class="vocab-ar">الاستدامة</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ GESCHICHTE ═══════════════ -->
+<section class="section" id="geschichte" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">📜</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الخامس عشر</div>
+      <div class="section-title">التاريخ الألماني</div>
+      <div class="section-german">Die Geschichte</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🧱</div>
+        <div class="card-titles">
+          <div class="card-arabic">سقوط جدار برلين — لحظة تغيّر التاريخ</div>
+          <div class="card-german">Der Mauerfall — Ein historischer Moment</div>
+          <div class="card-pron">[der mow-er-fal]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>في 9 نوفمبر 1989 سقط جدار برلين الذي قسّم ألمانيا لأكثر من 28 عاماً. هذا الحدث غيّر مسار أوروبا والعالم كله.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Mauer</span><span class="vocab-ar">الجدار</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Wiedervereinigung</span><span class="vocab-ar">إعادة التوحيد</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Geschichte</span><span class="vocab-ar">التاريخ</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🏰</div>
+        <div class="card-titles">
+          <div class="card-arabic">الإمبراطورية الرومانية المقدسة</div>
+          <div class="card-german">Das Heilige Römische Reich</div>
+          <div class="card-pron">[das hai-li-ge rö-mi-sheh raikh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>امتدت الإمبراطورية الرومانية المقدسة من 962 إلى 1806 ميلادي وشكّلت الأساس الذي بُنيت عليه الدول الأوروبية الحديثة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Reich</span><span class="vocab-ar">الإمبراطورية</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Kaiser</span><span class="vocab-ar">الإمبراطور</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Mittelalter</span><span class="vocab-ar">العصور الوسطى</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🕊️</div>
+        <div class="card-titles">
+          <div class="card-arabic">إصلاح مارتن لوثر</div>
+          <div class="card-german">Die Reformation Martin Luthers</div>
+          <div class="card-pron">[dee re-for-ma-tsion mar-tin loo-ters]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>عام 1517 نشر مارتن لوثر أطروحاته الـ95 في ويتنبرغ فأشعل الإصلاح الديني الذي غيّر أوروبا والمسيحية إلى الأبد.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Reformation</span><span class="vocab-ar">الإصلاح الديني</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Kirche</span><span class="vocab-ar">الكنيسة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Glaube</span><span class="vocab-ar">الإيمان</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ WISSENSCHAFT ═══════════════ -->
+<section class="section" id="wissenschaft" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🔬</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع السادس عشر</div>
+      <div class="section-title">العلوم والاختراعات</div>
+      <div class="section-german">Die Wissenschaft</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">💡</div>
+        <div class="card-titles">
+          <div class="card-arabic">اختراعات ألمانية غيّرت العالم</div>
+          <div class="card-german">Deutsche Erfindungen, die die Welt veränderten</div>
+          <div class="card-pron">[doyt-sheh er-fin-doong-en]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>اخترع الألمان الطباعة (غوتنبرغ)، والسيارة (بنز)، والأشعة السينية (رونتغن)، والأسبرين، والثلاجة. ألمانيا من أكثر دول العالم اختراعاً.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Erfindung</span><span class="vocab-ar">الاختراع</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Erfinder</span><span class="vocab-ar">المخترع</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Entdeckung</span><span class="vocab-ar">الاكتشاف</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🚗</div>
+        <div class="card-titles">
+          <div class="card-arabic">السيارة الألمانية</div>
+          <div class="card-german">Das deutsche Auto</div>
+          <div class="card-pron">[das doyt-sheh ow-to]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>اخترع كارل بنز السيارة عام 1885. اليوم BMW وMercedes وVW وAudi من أشهر العلامات التجارية في العالم.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Auto</span><span class="vocab-ar">السيارة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Motor</span><span class="vocab-ar">المحرك</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Autobahn</span><span class="vocab-ar">الطريق السريع</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🏅</div>
+        <div class="card-titles">
+          <div class="card-arabic">جوائز نوبل العلمية</div>
+          <div class="card-german">Naturwissenschaftliche Nobelpreise</div>
+          <div class="card-pron">[na-toor-vi-sen-shaft-li-kheh noh-bel-prai-ze]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>فاز العلماء الألمان بأكثر من 100 جائزة نوبل في الفيزياء والكيمياء والطب، مما يجعل ألمانيا من الدول الأكثر إنجازاً علمياً.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Physik</span><span class="vocab-ar">الفيزياء</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Chemie</span><span class="vocab-ar">الكيمياء</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Forschung</span><span class="vocab-ar">البحث العلمي</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ RELIGION ═══════════════ -->
+<section class="section" id="religion" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">⛪</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع السابع عشر</div>
+      <div class="section-title">الدين في ألمانيا</div>
+      <div class="section-german">Die Religion</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">✝️</div>
+        <div class="card-titles">
+          <div class="card-arabic">المسيحية في ألمانيا</div>
+          <div class="card-german">Das Christentum in Deutschland</div>
+          <div class="card-pron">[das khris-ten-toom]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>حوالي 50% من الألمان مسيحيون بين كاثوليك وبروتستانت. الكنائس الكبرى كـكولونيا وبرلين من أجمل المعالم المعمارية.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Kirche</span><span class="vocab-ar">الكنيسة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Gottesdienst</span><span class="vocab-ar">القداس</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Gebet</span><span class="vocab-ar">الصلاة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">☪️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الإسلام في ألمانيا</div>
+          <div class="card-german">Der Islam in Deutschland</div>
+          <div class="card-pron">[der is-lam in doytsh-land]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>يعيش في ألمانيا حوالي 5 مليون مسلم يمثلون حوالي 6% من السكان. الإسلام ثاني أكبر ديانة في البلاد.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Moschee</span><span class="vocab-ar">المسجد</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Ramadan</span><span class="vocab-ar">رمضان</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Gebet</span><span class="vocab-ar">الصلاة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🕍</div>
+        <div class="card-titles">
+          <div class="card-arabic">حرية الدين والمعتقد</div>
+          <div class="card-german">Religionsfreiheit</div>
+          <div class="card-pron">[re-li-gions-frai-hait]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>يكفل الدستور الألماني حرية الدين والمعتقد لجميع المواطنين والمقيمين. حوالي 37% من الألمان لا يعتنقون أي دين رسمي.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Freiheit</span><span class="vocab-ar">الحرية</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Glaube</span><span class="vocab-ar">المعتقد</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Toleranz</span><span class="vocab-ar">التسامح</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ MEDIEN ═══════════════ -->
+<section class="section" id="medien" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">📰</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع الثامن عشر</div>
+      <div class="section-title">الإعلام الألماني</div>
+      <div class="section-german">Die Medien</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">📺</div>
+        <div class="card-titles">
+          <div class="card-arabic">التلفزيون والراديو العام</div>
+          <div class="card-german">Öffentlich-rechtliches Fernsehen und Radio</div>
+          <div class="card-pron">[öf-fent-likh-rekht-li-khes fern-zeh-en]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>ARD وZDF من أكبر هيئات البث العام في أوروبا. Deutschlandfunk Kultur راديو ثقافي عام يبث برامج الفن والأدب والموسيقى.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Fernsehen</span><span class="vocab-ar">التلفزيون</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Sendung</span><span class="vocab-ar">البرنامج</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Rundfunk</span><span class="vocab-ar">الإذاعة</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🗞️</div>
+        <div class="card-titles">
+          <div class="card-arabic">الصحافة الألمانية</div>
+          <div class="card-german">Die deutsche Presse</div>
+          <div class="card-pron">[dee doyt-sheh pres-eh]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>Der Spiegel وDie Zeit وSüddeutsche Zeitung من أبرز المنابر الإعلامية. ألمانيا تحتل مراتب عالية في مؤشرات حرية الصحافة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Zeitung</span><span class="vocab-ar">الجريدة</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Journalist</span><span class="vocab-ar">الصحفي</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Nachricht</span><span class="vocab-ar">الخبر</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎙️</div>
+        <div class="card-titles">
+          <div class="card-arabic">البودكاست والإعلام الرقمي</div>
+          <div class="card-german">Podcast und digitale Medien</div>
+          <div class="card-pron">[pod-kast oont di-gi-ta-leh meh-dyen]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>ألمانيا من أكثر دول العالم استماعاً للبودكاست. البث الرقمي والمنصات الإعلامية الجديدة تكسب شعبية متزايدة بين الشباب.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Podcast</span><span class="vocab-ar">البودكاست</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Internet</span><span class="vocab-ar">الإنترنت</span></div>
+          <div class="vocab-item"><span class="vocab-de">die App</span><span class="vocab-ar">التطبيق</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ HÖRSPIEL ═══════════════ -->
+<section class="section" id="hoerspiel" style="scroll-margin-top:120px;">
+  <div class="section-header">
+    <div class="section-icon">🎙️</div>
+    <div class="section-meta">
+      <div class="section-tag">الموضوع التاسع عشر</div>
+      <div class="section-title">المسرح الإذاعي</div>
+      <div class="section-german">Das Hörspiel</div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card card-wide">
+      <div class="card-header">
+        <div class="card-emoji">🔊</div>
+        <div class="card-titles">
+          <div class="card-arabic">الهورشبيل — فن ألماني أصيل</div>
+          <div class="card-german">Das Hörspiel — Eine deutsche Kunstform</div>
+          <div class="card-pron">[das hör-shpeel]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>الهورشبيل هو مسرحية صوتية تُبث عبر الراديو، وهو فن ألماني بامتياز. يُعدّ من أرقى أشكال الترفيه الثقافي ويجمع التمثيل والموسيقى والمؤثرات الصوتية.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">das Hörspiel</span><span class="vocab-ar">المسرحية الإذاعية</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Sprecher</span><span class="vocab-ar">المذيع/الممثل</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Klang</span><span class="vocab-ar">الصوت</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">📻</div>
+        <div class="card-titles">
+          <div class="card-arabic">الراديو الثقافي الألماني</div>
+          <div class="card-german">Deutschlandfunk Kultur</div>
+          <div class="card-pron">[doytsh-land-foonk kool-toor]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>Deutschlandfunk Kultur محطة إذاعية ثقافية عامة تبث برامج الفن والأدب والموسيقى والمسرح الإذاعي على مدار الساعة.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">der Sender</span><span class="vocab-ar">المحطة الإذاعية</span></div>
+          <div class="vocab-item"><span class="vocab-de">die Sendung</span><span class="vocab-ar">البرنامج</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Hörer</span><span class="vocab-ar">المستمع</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎭</div>
+        <div class="card-titles">
+          <div class="card-arabic">جائزة الهورشبيل</div>
+          <div class="card-german">Der Hörspielpreis</div>
+          <div class="card-pron">[der hör-shpeel-prais]</div>
+        </div>
+        <div class="card-arrow">▼</div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <p>تُمنح جائزة الهورشبيل سنوياً لأفضل الأعمال الإذاعية. هذه الجائزة من أرفع الجوائز الثقافية في المشهد الإذاعي الألماني.</p>
+        <div class="vocab-list">
+          <div class="vocab-item"><span class="vocab-de">die Auszeichnung</span><span class="vocab-ar">الجائزة</span></div>
+          <div class="vocab-item"><span class="vocab-de">das Werk</span><span class="vocab-ar">العمل</span></div>
+          <div class="vocab-item"><span class="vocab-de">der Künstler</span><span class="vocab-ar">الفنان</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 8. USEFUL PHRASES ═══════════════ -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <div class="section-icon">✉️</div>
+    <div class="section-meta">
+      <div class="section-tag">تواصل معنا</div>
+      <div class="section-title">راسلنا</div>
+      <div class="section-german">Schreib uns eine Nachricht</div>
+    </div>
+  </div>
+  <div style="background:var(--card-bg);border:0.5px solid var(--border);border-radius:16px;padding:2rem;">
+    <form id="contactForm" style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <label style="font-family:'Cairo',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);">الاسم</label>
+        <input id="fname" type="text" placeholder="اكتب اسمك..." required style="background:rgba(255,255,255,0.05);border:0.5px solid var(--border);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Tajawal',sans-serif;font-size:1rem;outline:none;width:100%;box-sizing:border-box;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <label style="font-family:'Cairo',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);">البريد الإلكتروني</label>
+        <input id="femail" type="email" placeholder="بريدك الإلكتروني..." required style="background:rgba(255,255,255,0.05);border:0.5px solid var(--border);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Tajawal',sans-serif;font-size:1rem;outline:none;width:100%;box-sizing:border-box;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <label style="font-family:'Cairo',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.6);">رسالتك</label>
+        <textarea id="fmessage" rows="5" placeholder="اكتب رسالتك هنا..." required style="background:rgba(255,255,255,0.05);border:0.5px solid var(--border);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Tajawal',sans-serif;font-size:1rem;outline:none;resize:vertical;width:100%;box-sizing:border-box;"></textarea>
+      </div>
+      <button type="submit" style="background:var(--gold);color:#000;border:none;border-radius:10px;padding:14px 24px;font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">إرسال الرسالة ✉️</button>
+      <div id="formMsg" style="display:none;text-align:center;font-family:'Cairo',sans-serif;font-size:0.95rem;padding:12px;border-radius:10px;"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:1.8rem; margin-bottom:1rem">🇩🇪</div>
+  <div style="font-family:'Cairo',sans-serif; font-size:1rem; color:rgba(255,255,255,0.5); margin-bottom:0.5rem">اكتشف ألمانيا — دليلك الثقافي للعالم الألماني</div>
+  <div>Wissen ist der Schlüssel zur Welt — المعرفة هي مفتاح العالم</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init('09DAHTTiYKx5Gsuxv');
+
+function toggleCard(el) {
+  el.classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      card.classList.toggle('open');
+    });
+  });
+
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var msg = document.getElementById('formMsg');
+      btn.disabled = true;
+      btn.textContent = 'جاري الإرسال...';
+
+      var name = document.getElementById('fname').value;
+      var email = document.getElementById('femail').value;
+      var message = document.getElementById('fmessage').value;
+
+      emailjs.send('services.z9simo', 'template_bx3j675', {
+        name: name,
+        email: email,
+        message: message
+      }).then(function() {
+        msg.style.display = 'block';
+        msg.style.background = 'rgba(0,200,100,0.15)';
+        msg.style.color = '#4caf90';
+        msg.textContent = '✅ تم إرسال رسالتك بنجاح!';
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = 'إرسال الرسالة ✉️';
+      }, function() {
+        msg.style.display = 'block';
+        msg.style.background = 'rgba(200,50,50,0.15)';
+        msg.style.color = '#f44';
+        msg.textContent = '❌ حدث خطأ، حاول مجدداً.';
+        btn.disabled = false;
+        btn.textContent = 'إرسال الرسالة ✉️';
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>
